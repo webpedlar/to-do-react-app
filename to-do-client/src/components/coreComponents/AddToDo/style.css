@@ -1,0 +1,11 @@
+.addToDoContainer{
+    display: flex;
+    justify-content: center;
+}
+.addToDo{
+    width: 400px;
+    height: 30px;
+}
+.addButton{
+    
+}

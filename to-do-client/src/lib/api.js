@@ -1,9 +1,29 @@
 import * as apiconfig from './apiConfig';
 
-const APP_ID='834fd1584cb9e676a1ff0183fbd4784f';
 const API = {
-    getWheatherData: (address) => {
-        return apiconfig.apiRequest("get", `/forecast?appid=${APP_ID}&q=${address}`)
+    addToDo: (todo) => {
+        return apiconfig.apiRequest("post", `/addNote`,todo)
+    },
+    getToDoList: (data) => {
+        return apiconfig.apiRequest("get", `/listNote/${data}`)
+    },
+    deleteToDo: (data) => {
+        return apiconfig.apiRequest("delete", `/deleteNote`,data)
+    },
+    updateToDo: (data) => {
+        return apiconfig.apiRequest("post", `/updateNote`,data)
+    },
+    updateStatus: (data) => {
+        return apiconfig.apiRequest("post", `/updateStatus`,data)
+    },
+    addBucket: (data) => {
+        return apiconfig.apiRequest("post", `/addBucket`,data)
+    },
+    getBuckets: () => {
+        return apiconfig.apiRequest("get", `/listBucket`)
+    },
+    deleteBucket: (data) => {
+        return apiconfig.apiRequest("delete", `/deleteBucket`,data)
     }
 }
 

@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import { call, put, takeEvery, takeLatest, all } from 'redux-saga/effects';
-import { WeatherDataSaga } from './WeatherDataSaga';
+import { bucketSaga } from './bucketSaga';
+import { toDoListSaga } from './todoListSaga';
 
 export default function* MainSaga() {
     try {
         yield all([
-            ...WeatherDataSaga])
+            ...bucketSaga,...toDoListSaga])
     }
     catch (error) {
     }

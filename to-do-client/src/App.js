@@ -1,14 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {SearchWheather} from './components/screens'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import { ToDoBucket,ToDoContainer,PageNotFound } from './components/screens'
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 
 function App() {
   return (
     <Provider store={store}>
-      <SearchWheather/>
+      <div className="app">
+      <Router>
+          <Switch>
+            <Route exact path="/todo/:id" component={ToDoContainer} />
+            <Route exact path="/" component={ToDoBucket} />
+            <Route  component={PageNotFound} />
+          </Switch>
+      </Router>
+      </div>
     </Provider>
   );
 }

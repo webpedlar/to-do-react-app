@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const domain = "http://api.openweathermap.org"
-const baseURL = domain + '/data/2.5'
+const domain = "http://localhost:3007"
+const baseURL = domain + '/api'
 
 export const apiRequest = async (method, featureURL, data = {}) => {
     const headers = {

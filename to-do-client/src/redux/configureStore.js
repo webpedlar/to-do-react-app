@@ -1,5 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import WeatherReducer from './reducers/weatherReducer';
+import bucketReducer from './reducers/bucketReducer';
+import todoListReducer from './reducers/todoListReducer';
 
 import createSagaMiddleware from 'redux-saga'
 import MainSaga from './reduxSaga/mainSaga';
@@ -8,7 +9,7 @@ import MainSaga from './reduxSaga/mainSaga';
 const sagaMiddleware = createSagaMiddleware()
 
 const appReducer = combineReducers({
-    WeatherReducer
+    bucketReducer,todoListReducer
 });
 
 let store = createStore(appReducer, applyMiddleware(sagaMiddleware));
